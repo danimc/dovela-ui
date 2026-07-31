@@ -8,44 +8,44 @@
  */
 export const tokens = {
   color: {
-    bg: "--my-ui-color-bg",
-    surface: "--my-ui-color-surface",
-    border: "--my-ui-color-border",
-    borderStrong: "--my-ui-color-border-strong",
-    fg: "--my-ui-color-fg",
-    fgMuted: "--my-ui-color-fg-muted",
-    accent: "--my-ui-color-accent",
-    accentHover: "--my-ui-color-accent-hover",
-    accentFg: "--my-ui-color-accent-fg",
-    danger: "--my-ui-color-danger",
-    dangerFg: "--my-ui-color-danger-fg",
-    ring: "--my-ui-color-ring",
+    bg: "--dovela-color-bg",
+    surface: "--dovela-color-surface",
+    border: "--dovela-color-border",
+    borderStrong: "--dovela-color-border-strong",
+    fg: "--dovela-color-fg",
+    fgMuted: "--dovela-color-fg-muted",
+    accent: "--dovela-color-accent",
+    accentHover: "--dovela-color-accent-hover",
+    accentFg: "--dovela-color-accent-fg",
+    danger: "--dovela-color-danger",
+    dangerFg: "--dovela-color-danger-fg",
+    ring: "--dovela-color-ring",
   },
   radius: {
-    sm: "--my-ui-radius-sm",
-    md: "--my-ui-radius-md",
-    lg: "--my-ui-radius-lg",
-    xl: "--my-ui-radius-xl",
-    full: "--my-ui-radius-full",
+    sm: "--dovela-radius-sm",
+    md: "--dovela-radius-md",
+    lg: "--dovela-radius-lg",
+    xl: "--dovela-radius-xl",
+    full: "--dovela-radius-full",
   },
-  spacing: { base: "--my-ui-spacing" },
+  spacing: { base: "--dovela-spacing" },
   shadow: {
-    sm: "--my-ui-shadow-sm",
-    md: "--my-ui-shadow-md",
-    lg: "--my-ui-shadow-lg",
+    sm: "--dovela-shadow-sm",
+    md: "--dovela-shadow-md",
+    lg: "--dovela-shadow-lg",
   },
   typography: {
-    fontSans: "--my-ui-font-sans",
-    fontMono: "--my-ui-font-mono",
-    xs: "--my-ui-text-xs",
-    sm: "--my-ui-text-sm",
-    base: "--my-ui-text-base",
-    lg: "--my-ui-text-lg",
-    xl: "--my-ui-text-xl",
+    fontSans: "--dovela-font-sans",
+    fontMono: "--dovela-font-mono",
+    xs: "--dovela-text-xs",
+    sm: "--dovela-text-sm",
+    base: "--dovela-text-base",
+    lg: "--dovela-text-lg",
+    xl: "--dovela-text-xl",
   },
 } as const;
 
 export type Tokens = typeof tokens;
 
-/** `cssVar(tokens.color.accent)` → `"var(--my-ui-color-accent)"` */
+/** `cssVar(tokens.color.accent)` → `"var(--dovela-color-accent)"` */
 export const cssVar = (token: string) => `var(${token})`;

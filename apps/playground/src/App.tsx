@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Input } from "@my-ui/react";
+import { Button, Card, Input } from "@dovela/react";
 
 // Scratch surface for developing components. Break it freely — nothing here
 // ships, and nothing in the docs depends on it.

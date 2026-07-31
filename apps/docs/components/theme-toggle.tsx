@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@my-ui/react";
+import { Button } from "@dovela/react";
 
 export function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -14,7 +14,7 @@ export function ThemeToggle() {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("my-ui-theme", next ? "dark" : "light");
+    localStorage.setItem("dovela-theme", next ? "dark" : "light");
   };
 
   return (

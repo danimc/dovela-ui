@@ -1,5 +1,5 @@
 {
-  "name": "@my-ui/react",
+  "name": "@dovela/react",
   "version": "0.0.0",
   "description": "Accessible React components built on React Aria Components and Tailwind CSS",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@my-ui/core": "workspace:*",
+    "@dovela/core": "workspace:*",
     "react-aria-components": "^1.13.0",
     "tailwind-variants": "^3.1.1"
   },

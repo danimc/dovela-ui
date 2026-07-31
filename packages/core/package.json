@@ -1,7 +1,7 @@
 {
-  "name": "@my-ui/core",
+  "name": "@dovela/core",
   "version": "0.0.0",
-  "description": "Design tokens and shared utilities for my-ui",
+  "description": "Design tokens and shared utilities for dovela",
   "license": "MIT",
   "type": "module",
   "sideEffects": ["*.css"],

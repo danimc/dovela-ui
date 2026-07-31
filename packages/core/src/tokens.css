@@ -1,11 +1,11 @@
 /**
- * my-ui design tokens.
+ * dovela design tokens.
  *
  * Import AFTER `@import "tailwindcss"` in your app's CSS entry:
  *
  *   @import "tailwindcss";
- *   @import "@my-ui/core/tokens.css";
- *   @source "../node_modules/@my-ui/react/dist";
+ *   @import "@dovela/core/tokens.css";
+ *   @source "../node_modules/@dovela/react/dist";
  *
  * Raw values live in :root / .dark as plain CSS variables so they can be
  * overridden at runtime (theming, per-section scopes). `@theme inline` maps
@@ -21,108 +21,108 @@
 
 :root {
   /* --- color: raw ramp --- */
-  --my-ui-neutral-0: oklch(1 0 0);
-  --my-ui-neutral-50: oklch(0.985 0.002 250);
-  --my-ui-neutral-100: oklch(0.967 0.003 250);
-  --my-ui-neutral-200: oklch(0.922 0.005 250);
-  --my-ui-neutral-300: oklch(0.87 0.007 250);
-  --my-ui-neutral-500: oklch(0.6 0.012 250);
-  --my-ui-neutral-700: oklch(0.42 0.014 250);
-  --my-ui-neutral-900: oklch(0.23 0.014 250);
-  --my-ui-neutral-950: oklch(0.16 0.012 250);
+  --dovela-neutral-0: oklch(1 0 0);
+  --dovela-neutral-50: oklch(0.985 0.002 250);
+  --dovela-neutral-100: oklch(0.967 0.003 250);
+  --dovela-neutral-200: oklch(0.922 0.005 250);
+  --dovela-neutral-300: oklch(0.87 0.007 250);
+  --dovela-neutral-500: oklch(0.6 0.012 250);
+  --dovela-neutral-700: oklch(0.42 0.014 250);
+  --dovela-neutral-900: oklch(0.23 0.014 250);
+  --dovela-neutral-950: oklch(0.16 0.012 250);
 
-  --my-ui-brand-500: oklch(0.62 0.19 265);
-  --my-ui-brand-600: oklch(0.55 0.19 265);
-  --my-ui-brand-700: oklch(0.48 0.17 265);
+  --dovela-brand-500: oklch(0.62 0.19 265);
+  --dovela-brand-600: oklch(0.55 0.19 265);
+  --dovela-brand-700: oklch(0.48 0.17 265);
 
-  --my-ui-danger-500: oklch(0.62 0.21 25);
-  --my-ui-danger-600: oklch(0.55 0.21 25);
+  --dovela-danger-500: oklch(0.62 0.21 25);
+  --dovela-danger-600: oklch(0.55 0.21 25);
 
   /* --- color: semantic --- */
-  --my-ui-color-bg: var(--my-ui-neutral-0);
-  --my-ui-color-surface: var(--my-ui-neutral-50);
-  --my-ui-color-border: var(--my-ui-neutral-200);
-  --my-ui-color-border-strong: var(--my-ui-neutral-300);
-  --my-ui-color-fg: var(--my-ui-neutral-900);
-  --my-ui-color-fg-muted: var(--my-ui-neutral-500);
-  --my-ui-color-accent: var(--my-ui-brand-600);
-  --my-ui-color-accent-hover: var(--my-ui-brand-700);
-  --my-ui-color-accent-fg: var(--my-ui-neutral-0);
-  --my-ui-color-danger: var(--my-ui-danger-600);
-  --my-ui-color-danger-fg: var(--my-ui-neutral-0);
-  --my-ui-color-ring: var(--my-ui-brand-500);
+  --dovela-color-bg: var(--dovela-neutral-0);
+  --dovela-color-surface: var(--dovela-neutral-50);
+  --dovela-color-border: var(--dovela-neutral-200);
+  --dovela-color-border-strong: var(--dovela-neutral-300);
+  --dovela-color-fg: var(--dovela-neutral-900);
+  --dovela-color-fg-muted: var(--dovela-neutral-500);
+  --dovela-color-accent: var(--dovela-brand-600);
+  --dovela-color-accent-hover: var(--dovela-brand-700);
+  --dovela-color-accent-fg: var(--dovela-neutral-0);
+  --dovela-color-danger: var(--dovela-danger-600);
+  --dovela-color-danger-fg: var(--dovela-neutral-0);
+  --dovela-color-ring: var(--dovela-brand-500);
 
   /* --- radius --- */
-  --my-ui-radius-sm: 0.25rem;
-  --my-ui-radius-md: 0.5rem;
-  --my-ui-radius-lg: 0.75rem;
-  --my-ui-radius-xl: 1rem;
-  --my-ui-radius-full: 9999px;
+  --dovela-radius-sm: 0.25rem;
+  --dovela-radius-md: 0.5rem;
+  --dovela-radius-lg: 0.75rem;
+  --dovela-radius-xl: 1rem;
+  --dovela-radius-full: 9999px;
 
   /* --- spacing (base step; Tailwind derives p-1, p-2, ... from it) --- */
-  --my-ui-spacing: 0.25rem;
+  --dovela-spacing: 0.25rem;
 
   /* --- shadows --- */
-  --my-ui-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-  --my-ui-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.08), 0 2px 4px -2px oklch(0 0 0 / 0.06);
-  --my-ui-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.06);
+  --dovela-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+  --dovela-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.08), 0 2px 4px -2px oklch(0 0 0 / 0.06);
+  --dovela-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.06);
 
   /* --- typography --- */
-  --my-ui-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --my-ui-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-  --my-ui-text-xs: 0.75rem;
-  --my-ui-text-sm: 0.875rem;
-  --my-ui-text-base: 1rem;
-  --my-ui-text-lg: 1.125rem;
-  --my-ui-text-xl: 1.25rem;
+  --dovela-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --dovela-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  --dovela-text-xs: 0.75rem;
+  --dovela-text-sm: 0.875rem;
+  --dovela-text-base: 1rem;
+  --dovela-text-lg: 1.125rem;
+  --dovela-text-xl: 1.25rem;
 }
 
 .dark,
 [data-theme="dark"] {
-  --my-ui-color-bg: var(--my-ui-neutral-950);
-  --my-ui-color-surface: var(--my-ui-neutral-900);
-  --my-ui-color-border: oklch(0.32 0.012 250);
-  --my-ui-color-border-strong: oklch(0.42 0.014 250);
-  --my-ui-color-fg: var(--my-ui-neutral-50);
-  --my-ui-color-fg-muted: oklch(0.68 0.012 250);
-  --my-ui-color-accent: var(--my-ui-brand-500);
-  --my-ui-color-accent-hover: var(--my-ui-brand-600);
-  --my-ui-color-accent-fg: var(--my-ui-neutral-950);
-  --my-ui-color-danger: var(--my-ui-danger-500);
-  --my-ui-color-danger-fg: var(--my-ui-neutral-950);
+  --dovela-color-bg: var(--dovela-neutral-950);
+  --dovela-color-surface: var(--dovela-neutral-900);
+  --dovela-color-border: oklch(0.32 0.012 250);
+  --dovela-color-border-strong: oklch(0.42 0.014 250);
+  --dovela-color-fg: var(--dovela-neutral-50);
+  --dovela-color-fg-muted: oklch(0.68 0.012 250);
+  --dovela-color-accent: var(--dovela-brand-500);
+  --dovela-color-accent-hover: var(--dovela-brand-600);
+  --dovela-color-accent-fg: var(--dovela-neutral-950);
+  --dovela-color-danger: var(--dovela-danger-500);
+  --dovela-color-danger-fg: var(--dovela-neutral-950);
 }
 
 @theme inline {
-  --color-bg: var(--my-ui-color-bg);
-  --color-surface: var(--my-ui-color-surface);
-  --color-border-subtle: var(--my-ui-color-border);
-  --color-border-strong: var(--my-ui-color-border-strong);
-  --color-fg: var(--my-ui-color-fg);
-  --color-fg-muted: var(--my-ui-color-fg-muted);
-  --color-accent: var(--my-ui-color-accent);
-  --color-accent-hover: var(--my-ui-color-accent-hover);
-  --color-accent-fg: var(--my-ui-color-accent-fg);
-  --color-danger: var(--my-ui-color-danger);
-  --color-danger-fg: var(--my-ui-color-danger-fg);
-  --color-ring: var(--my-ui-color-ring);
+  --color-bg: var(--dovela-color-bg);
+  --color-surface: var(--dovela-color-surface);
+  --color-border-subtle: var(--dovela-color-border);
+  --color-border-strong: var(--dovela-color-border-strong);
+  --color-fg: var(--dovela-color-fg);
+  --color-fg-muted: var(--dovela-color-fg-muted);
+  --color-accent: var(--dovela-color-accent);
+  --color-accent-hover: var(--dovela-color-accent-hover);
+  --color-accent-fg: var(--dovela-color-accent-fg);
+  --color-danger: var(--dovela-color-danger);
+  --color-danger-fg: var(--dovela-color-danger-fg);
+  --color-ring: var(--dovela-color-ring);
 
-  --radius-sm: var(--my-ui-radius-sm);
-  --radius-md: var(--my-ui-radius-md);
-  --radius-lg: var(--my-ui-radius-lg);
-  --radius-xl: var(--my-ui-radius-xl);
+  --radius-sm: var(--dovela-radius-sm);
+  --radius-md: var(--dovela-radius-md);
+  --radius-lg: var(--dovela-radius-lg);
+  --radius-xl: var(--dovela-radius-xl);
 
-  --spacing: var(--my-ui-spacing);
+  --spacing: var(--dovela-spacing);
 
-  --shadow-sm: var(--my-ui-shadow-sm);
-  --shadow-md: var(--my-ui-shadow-md);
-  --shadow-lg: var(--my-ui-shadow-lg);
+  --shadow-sm: var(--dovela-shadow-sm);
+  --shadow-md: var(--dovela-shadow-md);
+  --shadow-lg: var(--dovela-shadow-lg);
 
-  --font-sans: var(--my-ui-font-sans);
-  --font-mono: var(--my-ui-font-mono);
+  --font-sans: var(--dovela-font-sans);
+  --font-mono: var(--dovela-font-mono);
 
-  --text-xs: var(--my-ui-text-xs);
-  --text-sm: var(--my-ui-text-sm);
-  --text-base: var(--my-ui-text-base);
-  --text-lg: var(--my-ui-text-lg);
-  --text-xl: var(--my-ui-text-xl);
+  --text-xs: var(--dovela-text-xs);
+  --text-sm: var(--dovela-text-sm);
+  --text-base: var(--dovela-text-base);
+  --text-lg: var(--dovela-text-lg);
+  --text-xl: var(--dovela-text-xl);
 }

@@ -1,10 +1,10 @@
 @import "tailwindcss";
-@import "@my-ui/core/tokens.css";
+@import "@dovela/core/tokens.css";
 
 @source "../../../packages/react/src";
 
 body {
-  background: var(--my-ui-color-bg);
-  color: var(--my-ui-color-fg);
-  font-family: var(--my-ui-font-sans);
+  background: var(--dovela-color-bg);
+  color: var(--dovela-color-fg);
+  font-family: var(--dovela-font-sans);
 }

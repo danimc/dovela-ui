@@ -1,7 +1,7 @@
 import Link from "next/link";
 // Server Component: use the flat part exports, not `Card.Body`.
 // See apps/docs/app/components/card/page.mdx#server-components.
-import { Button, Card, CardBody, CardHeader } from "@my-ui/react";
+import { Button, Card, CardBody, CardHeader } from "@dovela/react";
 import { CodeBlock } from "@/components/code-block";
 
 const FEATURES = [
@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="space-y-14">
       <section className="space-y-5">
-        <h1 className="text-4xl font-semibold tracking-tight">my-ui</h1>
+        <h1 className="text-4xl font-semibold tracking-tight">dovela</h1>
         <p className="max-w-xl text-lg text-fg-muted">
           An accessible React component library built on React Aria Components,
           Tailwind CSS v4 and tailwind-variants.
@@ -36,7 +36,7 @@ export default function Home() {
             <Button variant="outline">Get started</Button>
           </Link>
         </div>
-        <CodeBlock code={"pnpm add @my-ui/react @my-ui/core"} />
+        <CodeBlock code={"pnpm add @dovela/react @dovela/core"} />
       </section>
 
       <section className="grid gap-4 sm:grid-cols-3">
