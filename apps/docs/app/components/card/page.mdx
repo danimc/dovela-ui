@@ -1,0 +1,120 @@
+import { Button, Card, CardBody, CardFooter, CardHeader } from "@my-ui/react";
+import { Preview } from "@/components/preview";
+import { PropsTable } from "@/components/props-table";
+import { CodeBlock } from "@/components/code-block";
+
+# Card
+
+A surface with a compound API. `Card.Header`, `Card.Body` and `Card.Footer` are
+plain layout slots — use as many or as few as you need, in any order.
+
+<CodeBlock code={`import { Card } from "@my-ui/react";`} />
+
+## Basic
+
+<Preview
+  code={`<Card>
+  <Card.Header>
+    <h3>Pro</h3>
+    <p>For teams shipping every day.</p>
+  </Card.Header>
+  <Card.Body>Everything in Free, plus priority support and SSO.</Card.Body>
+  <Card.Footer>
+    <Button size="sm">Upgrade</Button>
+  </Card.Footer>
+</Card>`}
+>
+  <Card className="w-80">
+    <CardHeader>
+      <h3 className="font-medium">Pro</h3>
+      <p className="text-sm text-fg-muted">For teams shipping every day.</p>
+    </CardHeader>
+    <CardBody className="text-sm text-fg-muted">
+      Everything in Free, plus priority support and SSO.
+    </CardBody>
+    <CardFooter>
+      <Button size="sm">Upgrade</Button>
+    </CardFooter>
+  </Card>
+</Preview>
+
+## Variants
+
+<Preview
+  code={`<Card variant="outlined">…</Card>
+<Card variant="elevated">…</Card>
+<Card variant="flat">…</Card>`}
+>
+  <Card variant="outlined" className="w-44">
+    <CardBody className="text-sm">Outlined</CardBody>
+  </Card>
+  <Card variant="elevated" className="w-44">
+    <CardBody className="text-sm">Elevated</CardBody>
+  </Card>
+  <Card variant="flat" className="w-44">
+    <CardBody className="text-sm">Flat</CardBody>
+  </Card>
+</Preview>
+
+## Named imports
+
+The parts are exported individually too, if you prefer flat imports over the
+dot notation:
+
+<CodeBlock
+  code={`import { Card, CardHeader, CardBody, CardFooter } from "@my-ui/react";`}
+/>
+
+## Server Components
+
+`@my-ui/react` is a client package (every component needs React Aria's hooks).
+Across the RSC boundary, React hands a Server Component a *reference* to each
+export rather than the component itself — and a reference has no properties, so
+`Card.Header` resolves to `undefined` and the render fails.
+
+Inside a Server Component, use the flat exports:
+
+<CodeBlock
+  code={`// app/page.tsx — Server Component
+import { Card, CardHeader, CardBody } from "@my-ui/react";
+
+<Card>
+  <CardHeader>…</CardHeader>
+  <CardBody>…</CardBody>
+</Card>;`}
+/>
+
+In a Client Component (`"use client"`), both forms work. This is a constraint of
+the RSC module boundary, not of this library — every dot-notation component
+library has it.
+
+## Accessibility
+
+`Card` renders a plain `<div>` with no implicit role — it is a visual container.
+If a card is a meaningful region, give it a heading and an `aria-labelledby`, or
+pass `role="group"` with an `aria-label`. Never make the whole card clickable;
+put a `Button` or link inside it instead.
+
+## Props
+
+<PropsTable
+  rows={[
+    {
+      name: "variant",
+      type: `"outlined" | "elevated" | "flat"`,
+      default: `"outlined"`,
+      description: "Border, shadow or neither.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "Merged over the variant classes with tailwind-merge.",
+    },
+    {
+      name: "...divProps",
+      type: "HTMLAttributes<HTMLDivElement>",
+      description:
+        "All div props are forwarded, on the root and on each part.",
+    },
+  ]}
+/>
