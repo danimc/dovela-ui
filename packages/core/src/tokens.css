@@ -1,5 +1,5 @@
 /**
- * Dovela UI design tokens.
+ * Dovela UI design tokens — "Cantera".
  *
  * Import AFTER `@import "tailwindcss"` in your app's CSS entry:
  *
@@ -11,7 +11,12 @@
  * overridden at runtime (theming, per-section scopes). `@theme inline` maps
  * them into Tailwind utilities (bg-surface, text-fg-muted, rounded-md, ...).
  *
- * ponytail: placeholder palette — swap the oklch values, keep the names.
+ * CONTRAST CONTRACT — every value here is chosen to meet, in BOTH modes:
+ *   - text pairs        >= 7:1   (WCAG 2.1 AAA, 1.4.6)
+ *   - non-text UI pairs >= 3:1   (WCAG 2.1 AA,  1.4.11)
+ * `contrast.test.ts` parses this file and fails the build if a change breaks
+ * it. Do not hand-tune a colour here without running the test — the ochre in
+ * particular cannot exceed chroma 0.10 in light mode and still reach 7:1.
  */
 
 /* Dark mode is class-driven: put `class="dark"` (or `data-theme="dark"`) on
@@ -20,52 +25,51 @@
 @custom-variant dark (&:where(.dark, [data-theme="dark"], .dark *, [data-theme="dark"] *));
 
 :root {
-  /* --- color: raw ramp --- */
-  --dovela-neutral-0: oklch(1 0 0);
-  --dovela-neutral-50: oklch(0.985 0.002 250);
-  --dovela-neutral-100: oklch(0.967 0.003 250);
-  --dovela-neutral-200: oklch(0.922 0.005 250);
-  --dovela-neutral-300: oklch(0.87 0.007 250);
-  --dovela-neutral-500: oklch(0.6 0.012 250);
-  --dovela-neutral-700: oklch(0.42 0.014 250);
-  --dovela-neutral-900: oklch(0.23 0.014 250);
-  --dovela-neutral-950: oklch(0.16 0.012 250);
+  /* --- color: semantic. Literal values, no ramp indirection: the contrast
+         test reads them straight from here, and one accent does not need a
+         nine-step scale yet. --- */
+  --dovela-color-bg: oklch(0.995 0.004 80);
+  --dovela-color-surface: oklch(0.972 0.008 80);
 
-  --dovela-brand-500: oklch(0.62 0.19 265);
-  --dovela-brand-600: oklch(0.55 0.19 265);
-  --dovela-brand-700: oklch(0.48 0.17 265);
+  /* Decorative hairline — not load-bearing, so exempt from 3:1. */
+  --dovela-color-border: oklch(0.9 0.012 78);
+  /* Load-bearing edge (inputs, outlined controls) — must clear 3:1. */
+  --dovela-color-border-strong: oklch(0.645 0.018 76);
 
-  --dovela-danger-500: oklch(0.62 0.21 25);
-  --dovela-danger-600: oklch(0.55 0.21 25);
+  --dovela-color-fg: oklch(0.24 0.016 70);
+  --dovela-color-fg-muted: oklch(0.44 0.016 72);
 
-  /* --- color: semantic --- */
-  --dovela-color-bg: var(--dovela-neutral-0);
-  --dovela-color-surface: var(--dovela-neutral-50);
-  --dovela-color-border: var(--dovela-neutral-200);
-  --dovela-color-border-strong: var(--dovela-neutral-300);
-  --dovela-color-fg: var(--dovela-neutral-900);
-  --dovela-color-fg-muted: var(--dovela-neutral-500);
-  --dovela-color-accent: var(--dovela-brand-600);
-  --dovela-color-accent-hover: var(--dovela-brand-700);
-  --dovela-color-accent-fg: var(--dovela-neutral-0);
-  --dovela-color-danger: var(--dovela-danger-600);
-  --dovela-color-danger-fg: var(--dovela-neutral-0);
-  --dovela-color-ring: var(--dovela-brand-500);
+  --dovela-color-accent: oklch(0.45 0.1 52);
+  --dovela-color-accent-hover: oklch(0.38 0.09 52);
+  --dovela-color-accent-fg: oklch(0.99 0.005 80);
 
-  /* --- radius --- */
-  --dovela-radius-sm: 0.25rem;
-  --dovela-radius-md: 0.5rem;
-  --dovela-radius-lg: 0.75rem;
-  --dovela-radius-xl: 1rem;
+  --dovela-color-danger: oklch(0.46 0.14 28);
+  --dovela-color-danger-hover: oklch(0.39 0.13 28);
+  --dovela-color-danger-fg: oklch(0.99 0.005 80);
+
+  /* Disabled is a colour pair, never `opacity` — opacity shifts the hue and
+     makes a warm accent read as a different colour rather than as inactive. */
+  --dovela-color-disabled-bg: oklch(0.93 0.008 78);
+  --dovela-color-disabled-fg: oklch(0.617 0.012 74);
+
+  --dovela-color-ring: oklch(0.45 0.1 52);
+
+  /* --- radius: cut stone, not pebbles --- */
+  --dovela-radius-sm: 0.125rem;
+  --dovela-radius-md: 0.1875rem;
+  --dovela-radius-lg: 0.3125rem;
+  --dovela-radius-xl: 0.5rem;
   --dovela-radius-full: 9999px;
 
   /* --- spacing (base step; Tailwind derives p-1, p-2, ... from it) --- */
   --dovela-spacing: 0.25rem;
 
-  /* --- shadows --- */
-  --dovela-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-  --dovela-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.08), 0 2px 4px -2px oklch(0 0 0 / 0.06);
-  --dovela-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.06);
+  /* --- shadows: warm-tinted, never neutral black on a warm surface --- */
+  --dovela-shadow-sm: 0 1px 2px 0 oklch(0.24 0.016 70 / 0.06);
+  --dovela-shadow-md:
+    0 4px 6px -1px oklch(0.24 0.016 70 / 0.09), 0 2px 4px -2px oklch(0.24 0.016 70 / 0.06);
+  --dovela-shadow-lg:
+    0 10px 15px -3px oklch(0.24 0.016 70 / 0.1), 0 4px 6px -4px oklch(0.24 0.016 70 / 0.06);
 
   /* --- typography --- */
   --dovela-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -79,17 +83,28 @@
 
 .dark,
 [data-theme="dark"] {
-  --dovela-color-bg: var(--dovela-neutral-950);
-  --dovela-color-surface: var(--dovela-neutral-900);
-  --dovela-color-border: oklch(0.32 0.012 250);
-  --dovela-color-border-strong: oklch(0.42 0.014 250);
-  --dovela-color-fg: var(--dovela-neutral-50);
-  --dovela-color-fg-muted: oklch(0.68 0.012 250);
-  --dovela-color-accent: var(--dovela-brand-500);
-  --dovela-color-accent-hover: var(--dovela-brand-600);
-  --dovela-color-accent-fg: var(--dovela-neutral-950);
-  --dovela-color-danger: var(--dovela-danger-500);
-  --dovela-color-danger-fg: var(--dovela-neutral-950);
+  --dovela-color-bg: oklch(0.18 0.01 70);
+  --dovela-color-surface: oklch(0.235 0.012 70);
+
+  --dovela-color-border: oklch(0.355 0.012 76);
+  --dovela-color-border-strong: oklch(0.52 0.018 76);
+
+  --dovela-color-fg: oklch(0.94 0.008 70);
+  --dovela-color-fg-muted: oklch(0.735 0.016 72);
+
+  /* Dark backgrounds let the ochre run hotter and still clear 7:1. */
+  --dovela-color-accent: oklch(0.78 0.13 52);
+  --dovela-color-accent-hover: oklch(0.85 0.12 52);
+  --dovela-color-accent-fg: oklch(0.18 0.01 70);
+
+  --dovela-color-danger: oklch(0.75 0.14 28);
+  --dovela-color-danger-hover: oklch(0.82 0.13 28);
+  --dovela-color-danger-fg: oklch(0.18 0.01 70);
+
+  --dovela-color-disabled-bg: oklch(0.28 0.01 74);
+  --dovela-color-disabled-fg: oklch(0.55 0.012 74);
+
+  --dovela-color-ring: oklch(0.78 0.13 52);
 }
 
 @theme inline {
@@ -103,7 +118,10 @@
   --color-accent-hover: var(--dovela-color-accent-hover);
   --color-accent-fg: var(--dovela-color-accent-fg);
   --color-danger: var(--dovela-color-danger);
+  --color-danger-hover: var(--dovela-color-danger-hover);
   --color-danger-fg: var(--dovela-color-danger-fg);
+  --color-disabled: var(--dovela-color-disabled-bg);
+  --color-disabled-fg: var(--dovela-color-disabled-fg);
   --color-ring: var(--dovela-color-ring);
 
   --radius-sm: var(--dovela-radius-sm);

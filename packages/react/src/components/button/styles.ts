@@ -5,7 +5,10 @@ export const buttonStyles = tv({
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
     "font-sans font-medium transition-colors outline-none cursor-pointer",
     "data-[focus-visible]:outline-2 data-[focus-visible]:outline-offset-2 data-[focus-visible]:outline-ring",
-    "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    // Disabled is a colour swap, not opacity: fading a warm accent reads as a
+    // different colour instead of as inactive, and the text drops below 3:1.
+    "data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed",
+    "data-[disabled]:bg-disabled data-[disabled]:text-disabled-fg data-[disabled]:border-transparent",
   ],
   variants: {
     variant: {
