@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     // Hit the component source directly — instant HMR, no tsup watch needed.
-    alias: { "@my-ui/react": new URL("../../packages/react/src", import.meta.url).pathname },
+    alias: { "@dovela/react": new URL("../../packages/react/src", import.meta.url).pathname },
   },
 });

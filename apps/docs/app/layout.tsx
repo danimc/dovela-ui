@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "my-ui — accessible React components",
+  title: "dovela — accessible React components",
   description:
     "An accessible React component library built on React Aria Components and Tailwind CSS.",
 };
@@ -16,7 +16,7 @@ const NAV = [
 ];
 
 // Runs before paint so a dark-mode reload doesn't flash white.
-const THEME_SCRIPT = `try{var t=localStorage.getItem("my-ui-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.classList.toggle("dark",t==="dark")}catch(e){}`;
+const THEME_SCRIPT = `try{var t=localStorage.getItem("dovela-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.classList.toggle("dark",t==="dark")}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -32,7 +32,7 @@ export default function RootLayout({
         <header className="border-b border-border-subtle">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
             <Link href="/" className="text-lg font-semibold">
-              my-ui
+              dovela
             </Link>
             <nav className="flex items-center gap-5 text-sm">
               {NAV.map((item) => (

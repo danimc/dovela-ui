@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, CardHeader } from "@my-ui/react";
+import { Button, Card, CardBody, CardFooter, CardHeader } from "@dovela/react";
 import { Preview } from "@/components/preview";
 import { PropsTable } from "@/components/props-table";
 import { CodeBlock } from "@/components/code-block";
@@ -8,7 +8,7 @@ import { CodeBlock } from "@/components/code-block";
 A surface with a compound API. `Card.Header`, `Card.Body` and `Card.Footer` are
 plain layout slots — use as many or as few as you need, in any order.
 
-<CodeBlock code={`import { Card } from "@my-ui/react";`} />
+<CodeBlock code={`import { Card } from "@dovela/react";`} />
 
 ## Basic
 
@@ -62,12 +62,12 @@ The parts are exported individually too, if you prefer flat imports over the
 dot notation:
 
 <CodeBlock
-  code={`import { Card, CardHeader, CardBody, CardFooter } from "@my-ui/react";`}
+  code={`import { Card, CardHeader, CardBody, CardFooter } from "@dovela/react";`}
 />
 
 ## Server Components
 
-`@my-ui/react` is a client package (every component needs React Aria's hooks).
+`@dovela/react` is a client package (every component needs React Aria's hooks).
 Across the RSC boundary, React hands a Server Component a *reference* to each
 export rather than the component itself — and a reference has no properties, so
 `Card.Header` resolves to `undefined` and the render fails.
@@ -76,7 +76,7 @@ Inside a Server Component, use the flat exports:
 
 <CodeBlock
   code={`// app/page.tsx — Server Component
-import { Card, CardHeader, CardBody } from "@my-ui/react";
+import { Card, CardHeader, CardBody } from "@dovela/react";
 
 <Card>
   <CardHeader>…</CardHeader>

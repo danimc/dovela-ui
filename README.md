@@ -1,13 +1,11 @@
-# my-ui
+# dovela
 
 > Accessible React components built on React Aria Components, Tailwind CSS v4
 > and tailwind-variants. Install the package — or copy the source.
 
-<!-- badges: replace OWNER/REPO and the package name once published -->
-
-[![CI](https://img.shields.io/github/actions/workflow/status/OWNER/REPO/ci.yml?branch=main)](https://github.com/OWNER/REPO/actions)
-[![npm](https://img.shields.io/npm/v/@my-ui/react)](https://www.npmjs.com/package/@my-ui/react)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@my-ui/react)](https://bundlephobia.com/package/@my-ui/react)
+[![CI](https://img.shields.io/github/actions/workflow/status/danimc/dovela/ci.yml?branch=main)](https://github.com/danimc/dovela/actions)
+[![npm](https://img.shields.io/npm/v/@dovela/react)](https://www.npmjs.com/package/@dovela/react)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@dovela/react)](https://bundlephobia.com/package/@dovela/react)
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
 <!-- screenshot: drop a components grid here (light + dark side by side) -->
@@ -19,13 +17,13 @@
   event handlers.
 - **Tokens, not hardcoded values.** Every color, radius, shadow and font is a
   CSS custom property you can override at any scope.
-- **Two ways to consume it.** `pnpm add @my-ui/react` for the whole system, or
+- **Two ways to consume it.** `pnpm add @dovela/react` for the whole system, or
   lift a single component's source into your own codebase.
 
 ## Install
 
 ```bash
-pnpm add @my-ui/react @my-ui/core
+pnpm add @dovela/react @dovela/core
 ```
 
 Peer dependencies: `react >= 18`, `react-dom >= 18`. Tailwind CSS v4 is required
@@ -35,16 +33,16 @@ Then, in your CSS entry:
 
 ```css
 @import "tailwindcss";
-@import "@my-ui/core/tokens.css";
+@import "@dovela/core/tokens.css";
 
 /* Let Tailwind see the classes inside the published components. */
-@source "../node_modules/@my-ui/react/dist";
+@source "../node_modules/@dovela/react/dist";
 ```
 
 ## Quick start
 
 ```tsx
-import { Button, Card, Input } from "@my-ui/react";
+import { Button, Card, Input } from "@dovela/react";
 
 export function SignUp() {
   return (
@@ -73,7 +71,7 @@ Use the flat exports there:
 
 ```tsx
 // Server Component
-import { Card, CardHeader, CardBody } from "@my-ui/react";
+import { Card, CardHeader, CardBody } from "@dovela/react";
 ```
 
 Both forms work inside a Client Component.
@@ -87,7 +85,7 @@ light on load, run this before paint:
 ```html
 <script>
   var t =
-    localStorage.getItem("my-ui-theme") ||
+    localStorage.getItem("dovela-theme") ||
     (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   document.documentElement.classList.toggle("dark", t === "dark");
 </script>
@@ -99,8 +97,8 @@ Override any token wherever you need it — globally or scoped to a subtree:
 
 ```css
 :root {
-  --my-ui-color-accent: oklch(0.62 0.19 145);
-  --my-ui-radius-md: 0.125rem;
+  --dovela-color-accent: oklch(0.62 0.19 145);
+  --dovela-radius-md: 0.125rem;
 }
 ```
 
@@ -115,7 +113,7 @@ The full list lives in
 | `Input`   | ✅     |
 | `Card`    | ✅     |
 
-More to come. Recipes (copy-pasteable source, `npx my-ui add button`) are
+More to come. Recipes (copy-pasteable source, `npx dovela add button`) are
 planned once the package flow is settled.
 
 ## Repo layout
