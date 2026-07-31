@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@dovela/core/tokens.css";
+@import "@dovela-ui/core/tokens.css";
 
 @source "../../../packages/react/src";
 

@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@dovela/core/tokens.css";
+@import "@dovela-ui/core/tokens.css";
 
 /* Tailwind only scans this app by default — point it at the component source
    so the library's utility classes end up in the docs stylesheet too. */

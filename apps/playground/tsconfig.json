@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["vite/client"],
-    "paths": { "@dovela/react": ["../../packages/react/src"] }
+    "paths": { "@dovela-ui/react": ["../../packages/react/src"] }
   },
   "include": ["src", "vite.config.ts"]
 }

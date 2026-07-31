@@ -1,11 +1,11 @@
 /**
- * dovela design tokens.
+ * Dovela UI design tokens.
  *
  * Import AFTER `@import "tailwindcss"` in your app's CSS entry:
  *
  *   @import "tailwindcss";
- *   @import "@dovela/core/tokens.css";
- *   @source "../node_modules/@dovela/react/dist";
+ *   @import "@dovela-ui/core/tokens.css";
+ *   @source "../node_modules/@dovela-ui/react/dist";
  *
  * Raw values live in :root / .dark as plain CSS variables so they can be
  * overridden at runtime (theming, per-section scopes). `@theme inline` maps

@@ -1,11 +1,11 @@
-# dovela
+# Dovela UI
 
 > Accessible React components built on React Aria Components, Tailwind CSS v4
 > and tailwind-variants. Install the package — or copy the source.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/danimc/dovela/ci.yml?branch=main)](https://github.com/danimc/dovela/actions)
-[![npm](https://img.shields.io/npm/v/@dovela/react)](https://www.npmjs.com/package/@dovela/react)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@dovela/react)](https://bundlephobia.com/package/@dovela/react)
+[![CI](https://img.shields.io/github/actions/workflow/status/danimc/dovela-ui/ci.yml?branch=main)](https://github.com/danimc/dovela-ui/actions)
+[![npm](https://img.shields.io/npm/v/@dovela-ui/react)](https://www.npmjs.com/package/@dovela-ui/react)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@dovela-ui/react)](https://bundlephobia.com/package/@dovela-ui/react)
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
 <!-- screenshot: drop a components grid here (light + dark side by side) -->
@@ -17,13 +17,13 @@
   event handlers.
 - **Tokens, not hardcoded values.** Every color, radius, shadow and font is a
   CSS custom property you can override at any scope.
-- **Two ways to consume it.** `pnpm add @dovela/react` for the whole system, or
+- **Two ways to consume it.** `pnpm add @dovela-ui/react` for the whole system, or
   lift a single component's source into your own codebase.
 
 ## Install
 
 ```bash
-pnpm add @dovela/react @dovela/core
+pnpm add @dovela-ui/react @dovela-ui/core
 ```
 
 Peer dependencies: `react >= 18`, `react-dom >= 18`. Tailwind CSS v4 is required
@@ -33,16 +33,16 @@ Then, in your CSS entry:
 
 ```css
 @import "tailwindcss";
-@import "@dovela/core/tokens.css";
+@import "@dovela-ui/core/tokens.css";
 
 /* Let Tailwind see the classes inside the published components. */
-@source "../node_modules/@dovela/react/dist";
+@source "../node_modules/@dovela-ui/react/dist";
 ```
 
 ## Quick start
 
 ```tsx
-import { Button, Card, Input } from "@dovela/react";
+import { Button, Card, Input } from "@dovela-ui/react";
 
 export function SignUp() {
   return (
@@ -71,7 +71,7 @@ Use the flat exports there:
 
 ```tsx
 // Server Component
-import { Card, CardHeader, CardBody } from "@dovela/react";
+import { Card, CardHeader, CardBody } from "@dovela-ui/react";
 ```
 
 Both forms work inside a Client Component.
@@ -113,7 +113,7 @@ The full list lives in
 | `Input`   | ✅     |
 | `Card`    | ✅     |
 
-More to come. Recipes (copy-pasteable source, `npx dovela add button`) are
+More to come. Recipes (copy-pasteable source, `npx dovela-ui add button`) are
 planned once the package flow is settled.
 
 ## Repo layout

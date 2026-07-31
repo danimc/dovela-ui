@@ -1,6 +1,6 @@
 ---
-"@dovela/react": minor
-"@dovela/core": minor
+"@dovela-ui/react": minor
+"@dovela-ui/core": minor
 ---
 
 Initial release: design tokens, `Button`, `Input` and `Card`.

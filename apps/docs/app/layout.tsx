@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "dovela — accessible React components",
+  title: "Dovela UI — accessible React components",
   description:
     "An accessible React component library built on React Aria Components and Tailwind CSS.",
 };
@@ -32,7 +32,7 @@ export default function RootLayout({
         <header className="border-b border-border-subtle">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
             <Link href="/" className="text-lg font-semibold">
-              dovela
+              Dovela UI
             </Link>
             <nav className="flex items-center gap-5 text-sm">
               {NAV.map((item) => (

@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@dovela/core": "workspace:*",
-    "@dovela/react": "workspace:*",
+    "@dovela-ui/core": "workspace:*",
+    "@dovela-ui/react": "workspace:*",
     "next": "^15.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

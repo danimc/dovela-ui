@@ -20,10 +20,10 @@ importers:
 
   apps/docs:
     dependencies:
-      '@dovela/core':
+      '@dovela-ui/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@dovela/react':
+      '@dovela-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
       next:
@@ -69,10 +69,10 @@ importers:
 
   apps/playground:
     dependencies:
-      '@dovela/core':
+      '@dovela-ui/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@dovela/react':
+      '@dovela-ui/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -115,7 +115,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@dovela/core':
+      '@dovela-ui/core':
         specifier: workspace:*
         version: link:../core
       react-aria-components:
