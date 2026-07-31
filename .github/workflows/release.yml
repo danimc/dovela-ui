@@ -19,8 +19,10 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1.
-          node-version: 22.14.0
+          # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1. Track
+          # the 22 line rather than a pin: npm@latest (12.x) itself requires
+          # Node >= 22.22.2, so a pinned 22.14.0 fails the upgrade below.
+          node-version: 22
           cache: pnpm
           registry-url: https://registry.npmjs.org
       # The npm bundled with the runner image does the OIDC token exchange —
