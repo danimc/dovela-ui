@@ -3,9 +3,35 @@
   "version": "0.0.0",
   "description": "Design tokens and shared utilities for Dovela UI",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danimc/dovela-ui.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/danimc/dovela-ui#readme",
+  "bugs": {
+    "url": "https://github.com/danimc/dovela-ui/issues"
+  },
+  "author": "Daniel Mora (https://github.com/danimc)",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "design-system",
+    "accessibility",
+    "a11y",
+    "react-aria",
+    "tailwindcss",
+    "tailwind-variants"
+  ],
   "type": "module",
-  "sideEffects": ["*.css"],
-  "files": ["dist", "src/tokens.css"],
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "src/tokens.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -18,7 +44,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

@@ -19,13 +19,22 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # Trusted publishing needs Node >= 22.14.0 and npm >= 11.5.1.
+          node-version: 22.14.0
           cache: pnpm
           registry-url: https://registry.npmjs.org
+      # The npm bundled with the runner image does the OIDC token exchange —
+      # an old one fails with a misleading E404. Upgrade it explicitly.
+      - run: npm install -g npm@latest
       - run: pnpm install --frozen-lockfile
 
       # Opens (or updates) a "Version Packages" PR while changesets are
       # pending; publishes to npm once that PR is merged.
+      #
+      # No NPM_TOKEN: publishing authenticates via OIDC trusted publishing
+      # (`id-token: write` above). npm is deprecating direct publishing from
+      # 2FA-bypass tokens around Jan 2027. Each package must have this repo +
+      # `release.yml` registered under Settings -> Trusted Publisher on npm.
       - uses: changesets/action@v1
         with:
           version: pnpm version-packages
@@ -34,5 +43,3 @@ jobs:
           title: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
