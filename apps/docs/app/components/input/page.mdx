@@ -1,0 +1,113 @@
+import { Input } from "@my-ui/react";
+import { Preview } from "@/components/preview";
+import { PropsTable } from "@/components/props-table";
+import { CodeBlock } from "@/components/code-block";
+
+# Input
+
+A text field built on React Aria's `TextField`. The label, description and error
+message are wired to the input with the right `id` / `aria-describedby` links —
+you never have to manage them.
+
+<CodeBlock code={`import { Input } from "@my-ui/react";`} />
+
+## Basic
+
+<Preview
+  code={`<Input label="Email" placeholder="you@example.com" />`}
+>
+  <div className="w-72">
+    <Input label="Email" placeholder="you@example.com" />
+  </div>
+</Preview>
+
+## With description
+
+<Preview
+  code={`<Input
+  label="Email"
+  description="We only use it for billing receipts."
+  placeholder="you@example.com"
+/>`}
+>
+  <div className="w-72">
+    <Input
+      label="Email"
+      description="We only use it for billing receipts."
+      placeholder="you@example.com"
+    />
+  </div>
+</Preview>
+
+## Invalid
+
+<Preview
+  code={`<Input label="Email" isInvalid errorMessage="Enter a valid email." />`}
+>
+  <div className="w-72">
+    <Input label="Email" isInvalid errorMessage="Enter a valid email." />
+  </div>
+</Preview>
+
+## Sizes
+
+<Preview
+  code={`<Input size="sm" label="Small" />
+<Input size="md" label="Medium" />
+<Input size="lg" label="Large" />`}
+>
+  <div className="flex w-full flex-col gap-4">
+    <Input size="sm" label="Small" />
+    <Input size="md" label="Medium" />
+    <Input size="lg" label="Large" />
+  </div>
+</Preview>
+
+## Props
+
+<PropsTable
+  rows={[
+    {
+      name: "label",
+      type: "ReactNode",
+      description:
+        "Visible label. Omit it only when you pass an aria-label instead.",
+    },
+    {
+      name: "description",
+      type: "ReactNode",
+      description: "Helper text, linked via aria-describedby.",
+    },
+    {
+      name: "errorMessage",
+      type: "ReactNode | (v: ValidationResult) => ReactNode",
+      description: "Shown when the field is invalid.",
+    },
+    {
+      name: "size",
+      type: `"sm" | "md" | "lg"`,
+      default: `"md"`,
+      description: "Control height, padding and font size.",
+    },
+    {
+      name: "isInvalid",
+      type: "boolean",
+      default: "false",
+      description: "Marks the field invalid and reveals the error message.",
+    },
+    {
+      name: "value / defaultValue",
+      type: "string",
+      description: "Controlled and uncontrolled value.",
+    },
+    {
+      name: "onChange",
+      type: "(value: string) => void",
+      description: "Receives the value directly, not the event.",
+    },
+  ]}
+/>
+
+All other props from React Aria's
+[`TextField`](https://react-spectrum.adobe.com/react-aria/TextField.html) are
+forwarded.

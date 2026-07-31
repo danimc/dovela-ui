@@ -1,0 +1,86 @@
+import { Button } from "@my-ui/react";
+import { Preview } from "@/components/preview";
+import { PropsTable } from "@/components/props-table";
+import { CodeBlock } from "@/components/code-block";
+
+# Button
+
+A button built on React Aria's `Button`. It renders a native `<button>`, handles
+keyboard activation and press states across mouse, touch and pen, and exposes
+its state through `data-*` attributes that the variants style.
+
+<CodeBlock code={`import { Button } from "@my-ui/react";`} />
+
+## Variants
+
+<Preview
+  code={`<Button variant="solid">Solid</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>`}
+>
+  <Button variant="solid">Solid</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+</Preview>
+
+## Sizes
+
+<Preview
+  code={`<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>`}
+>
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+</Preview>
+
+## Disabled
+
+Use `isDisabled` rather than the native `disabled` attribute — React Aria keeps
+the button out of the tab order and suppresses `onPress`.
+
+<Preview code={`<Button isDisabled>Disabled</Button>`}>
+  <Button isDisabled>Disabled</Button>
+</Preview>
+
+## Props
+
+<PropsTable
+  rows={[
+    {
+      name: "variant",
+      type: `"solid" | "outline" | "ghost"`,
+      default: `"solid"`,
+      description: "Visual emphasis.",
+    },
+    {
+      name: "size",
+      type: `"sm" | "md" | "lg"`,
+      default: `"md"`,
+      description: "Control height, padding and font size.",
+    },
+    {
+      name: "isDisabled",
+      type: "boolean",
+      default: "false",
+      description: "Disables interaction and dims the button.",
+    },
+    {
+      name: "onPress",
+      type: "(e: PressEvent) => void",
+      description:
+        "Fires on click, Enter, Space and touch. Prefer it over onClick.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description:
+        "Merged over the variant classes with tailwind-merge, so conflicts resolve in your favour.",
+    },
+  ]}
+/>
+
+All other props from React Aria's
+[`Button`](https://react-spectrum.adobe.com/react-aria/Button.html) are
+forwarded.
