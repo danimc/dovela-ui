@@ -1,6 +1,6 @@
 {
   "name": "@dovela-ui/react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Accessible React components built on React Aria Components and Tailwind CSS",
   "license": "MIT",
   "repository": {
