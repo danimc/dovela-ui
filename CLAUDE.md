@@ -62,6 +62,16 @@ lint as meaningful.
   makes the next `--force-with-lease` abort on stale info. `git fetch origin`
   first.
 
+## Branching
+
+**`dev` is the default branch and the target for every PR.** `main` is
+released code. Merging to `main` does not publish — it opens a "Version
+Packages" PR, and merging that one publishes. Full runbook in
+[docs/RELEASING.md](./docs/RELEASING.md).
+
+Never commit straight to `main`. Never push to either long-lived branch
+without a PR unless it is a trivial docs fix on `dev`.
+
 ## Workflow across sessions
 
 Work is tracked as GitHub issues in `danimc/dovela-ui`. Start a session by

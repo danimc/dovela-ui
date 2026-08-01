@@ -2,8 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    # `changeset-release/*` is the branch the Release workflow pushes the
+    # "Version Packages" PR to. Without it that PR carries no check run,
+    # because PRs opened by GITHUB_TOKEN do not trigger `pull_request`.
+    branches: [main, dev, "changeset-release/**"]
   pull_request:
+    branches: [main, dev]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-test:
