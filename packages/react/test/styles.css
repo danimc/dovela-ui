@@ -1,0 +1,6 @@
+/* Compiled by @tailwindcss/vite during the browser test run. Without real
+   compiled CSS the components render unstyled, axe's colour-contrast rule has
+   nothing to measure, and the accessibility claim goes untested. */
+@import "tailwindcss";
+@import "@dovela-ui/core/tokens.css";
+@source "../src";

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { axe } from "vitest-axe";
+import { expectNoViolations } from "../../../test/axe";
 import { Card } from "./index";
 
 describe("Card", () => {
@@ -41,8 +41,8 @@ describe("Card", () => {
         <Card.Footer>Footer</Card.Footer>
       </Card>,
     );
-    expect(
-      await axe(container, { rules: { "color-contrast": { enabled: false } } }),
-    ).toHaveNoViolations();
+    await expectNoViolations(container, {
+      rules: { "color-contrast": { enabled: false } },
+    });
   });
 });

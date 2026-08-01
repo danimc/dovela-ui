@@ -7,3 +7,9 @@ coverage/
 .DS_Store
 .env*
 !.env.example
+
+# vitest browser mode: failure screenshots and attachments.
+# When visual regression lands, its baselines need an explicit directory that
+# is NOT ignored — pick one then rather than un-ignoring these.
+.vitest-attachments/
+**/__screenshots__/

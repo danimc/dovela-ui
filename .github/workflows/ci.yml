@@ -16,6 +16,9 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Browser-mode tests need a real Chromium — that is where axe can measure
+      # contrast and where focus behaviour is not a jsdom approximation.
+      - run: pnpm --filter @dovela-ui/react exec playwright install --with-deps chromium
       - run: pnpm typecheck
       - run: pnpm build
       - run: pnpm test

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
-import { axe } from "vitest-axe";
+import { expectNoViolations } from "../../../test/axe";
 import { Input } from "./index";
 
 describe("Input", () => {
@@ -27,8 +27,8 @@ describe("Input", () => {
     const { container } = render(
       <Input label="Email" description="We never share it." />,
     );
-    expect(
-      await axe(container, { rules: { "color-contrast": { enabled: false } } }),
-    ).toHaveNoViolations();
+    await expectNoViolations(container, {
+      rules: { "color-contrast": { enabled: false } },
+    });
   });
 });

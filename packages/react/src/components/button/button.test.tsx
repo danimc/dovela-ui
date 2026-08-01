@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { axe } from "vitest-axe";
+import { expectNoViolations } from "../../../test/axe";
 import { Button } from "./index";
 
 describe("Button", () => {
@@ -59,8 +59,8 @@ describe("Button", () => {
 
     // ponytail: color-contrast is off — jsdom has no layout or real CSS, the
     // rule can only produce noise here. Cover it in a browser-mode run later.
-    expect(
-      await axe(container, { rules: { "color-contrast": { enabled: false } } }),
-    ).toHaveNoViolations();
+    await expectNoViolations(container, {
+      rules: { "color-contrast": { enabled: false } },
+    });
   });
 });
